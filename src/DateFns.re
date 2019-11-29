@@ -114,10 +114,10 @@ type formatDistanceOptions = {
   includeSeconds: bool,
 };
 
-[@bs.module "date-fns/fp/formatDistanceWithOptions"]
+[@bs.module "date-fns/fp"]
 external uncurried_formatDistanceWithOptions:
   (. formatDistanceOptions) => (. date) => (. date) => string =
-  "default";
+  "formatDistanceWithOptions";
 let formatDistanceWithOptions = curry3(uncurried_formatDistanceWithOptions);
 
 [@bs.module "date-fns/fp"]
@@ -136,10 +136,10 @@ type formatDistanceStrictOptions = {
   addSuffix: bool,
 };
 
-[@bs.module "date-fns/fp/formatDistanceStrictWithOptions"]
+[@bs.module "date-fns/fp"]
 external uncurried_formatDistanceStrictWithOptions:
   (. formatDistanceStrictOptions) => (. date) => (. date) => string =
-  "default";
+  "formatDistanceStrictWithOptions";
 let formatDistanceStrictWithOptions = curry2(uncurried_formatDistanceStrictWithOptions);
 
 [@bs.module "date-fns/fp"]
@@ -361,7 +361,7 @@ type setDayOptions = {
   weekStartsOn: int,
 };
 
-[@bs.module "date-fns/fp/setDayWithOptions"]
+[@bs.module "date-fns/fp"]
 external uncurried_setDayWithOptions: (. setDayOptions) => (. date) => (. date) => date =
   "setDayWithOptions";
 let setDayWithOptions = curry2(uncurried_setDayWithOptions);
