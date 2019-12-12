@@ -203,6 +203,10 @@ let differenceInDays = curry2(uncurried_differenceInDays);
 [@bs.module "date-fns/fp"] external endOfDay: date => date = "endOfDay";
 [@bs.module "date-fns/fp"] external startOfDay: date => date = "startOfDay";
 [@bs.module "date-fns/fp"] external getDate: date => int = "getDate";
+
+[@bs.module "date-fns/fp"] external uncurried_setDate: (. int) => (. date) => date = "setDate";
+let setDate = curry2(uncurried_setDate);
+
 [@bs.module "date-fns/fp"] external getDayOfYear: date => int = "getDayOfYear";
 
 [@bs.module "date-fns/fp"]
