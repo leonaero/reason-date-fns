@@ -154,7 +154,7 @@ let isBefore = curry2(uncurried_isBefore);
 
 [@bs.module "date-fns/fp"] external isDate: date => bool = "isDate";
 
-[@bs.module "date-fns/fp"] external isVaid: date => bool = "isValid";
+[@bs.module "date-fns/fp"] external isValid: date => bool = "isValid";
 
 [@bs.module "date-fns/fp"] external uncurried_isEqual: (. date) => (. date) => bool = "isEqual";
 let isEqual = curry2(uncurried_isEqual);
