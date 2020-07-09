@@ -491,3 +491,25 @@ let subYears = curry2(uncurried_subYears);
 [@bs.module "date-fns/fp"] external uncurried_lastDayOfYear: date => date = "lastDayOfYear";
 
 [@bs.module "date-fns/fp"] external uncurried_isLeapYear: date => bool = "isLeapYear";
+
+[@bs.deriving abstract]
+type values = {
+  [@bs.optional]
+  year: float,
+  [@bs.optional]
+  month: float,
+  [@bs.optional]
+  date: float,
+  [@bs.optional]
+  hours: float,
+  [@bs.optional]
+  minutes: float,
+  [@bs.optional]
+  seconds: float,
+  [@bs.optional]
+  milliseconds: float,
+};
+
+[@bs.module "date-fns/fp"] external uncurried_set: (. values) => (. date) => date = "set";
+
+let set = ReasonDateFns.ReasonDateFnsCurryHelpers.curry2(uncurried_set);
