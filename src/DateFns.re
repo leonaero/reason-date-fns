@@ -512,4 +512,4 @@ type values = {
 
 [@bs.module "date-fns/fp"] external uncurried_set: (. values) => (. date) => date = "set";
 
-let set = ReasonDateFns.ReasonDateFnsCurryHelpers.curry2(uncurried_set);
+let set = ReasonDateFnsCurryHelpers.curry2(uncurried_set);
