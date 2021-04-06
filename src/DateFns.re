@@ -175,6 +175,12 @@ let parse = curry3(uncurried_parse);
 
 [@bs.module "date-fns/fp"] external toDate: int => date = "toDate";
 
+[@bs.module "date-fns/fp/fromUnixTime"] external fromUnixTime: float => date = "default";
+
+[@bs.module "date-fns/fp/getUnixTime"] external getUnixTime: date => float = "default";
+
+[@bs.module "date-fns/fp/getTime"] external getTime: date => int = "default";
+
 /***************/
 /* Day helpers */
 /***************/
@@ -366,8 +372,9 @@ type setDayOptions = {
 };
 
 [@bs.module "date-fns/fp"]
-external uncurried_setDayWithOptions: (. setDayOptions) => (. date) => (. date) => date =
-  "setDayWithOptions";
+external uncurried_setDayWithOptions: (. setDayOptions) => (. date) => (. date) => date ="setDayWithOptions"
+[@bs.module "date-fns/fp"]
+external uncurried_setDayWithOptions: (. setDayOptions) => (. date) => (. date) => date ="setDay"
 let setDayWithOptions = curry2(uncurried_setDayWithOptions);
 
 [@bs.module "date-fns/fp"]
